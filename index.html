@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta_title">The Icing Art | Bolos e Doces Artesanais</title>
+<meta name="description" content="Bolos personalizados e doces artesanais feitos à mão com carinho, por The Icing Art." data-i18n-attr="content:meta_description">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+<!-- Open Graph / WhatsApp / Instagram link preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Icing Art">
+<meta property="og:title" content="The Icing Art | Bolos e Doces Artesanais" data-i18n-attr="content:meta_title">
+<meta property="og:description" content="Bolos personalizados e doces artesanais feitos à mão com carinho, por The Icing Art." data-i18n-attr="content:meta_description">
+<meta property="og:image" content="images/theicingart.jpg">
+<!-- TODO: trocar por URL absoluta (ex: https://theicingart.com/images/theicingart.jpg) quando o site tiver domínio -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Icing Art | Bolos e Doces Artesanais" data-i18n-attr="content:meta_title">
+<meta name="twitter:description" content="Bolos personalizados e doces artesanais feitos à mão com carinho, por The Icing Art." data-i18n-attr="content:meta_description">
+<meta name="twitter:image" content="images/theicingart.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#top" class="logo">
+      <img src="images/theicingart.jpg" alt="The Icing Art" class="logo-img">
+      <span>The Icing Art</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
+      <li><a href="#galeria" data-i18n="nav_gallery">Galeria</a></li>
+      <li><a href="#depoimentos" data-i18n="nav_testimonials">Depoimentos</a></li>
+      <li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
+    </ul>
+    <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+      <button type="button" class="lang-btn" data-lang="pt">PT</button>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="hero-content container">
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Feito à mão, com amor</p>
+      <h1 data-i18n-html="hero_title">Bolos e doces que viram <span>obra de arte</span></h1>
+      <p class="hero-sub" data-i18n="hero_sub">Criações artesanais personalizadas para tornar sua celebração ainda mais doce e especial.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary" data-i18n="hero_cta_primary">Fazer um pedido</a>
+        <a href="#galeria" class="btn btn-outline" data-i18n="hero_cta_outline">Ver galeria</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-image" aria-hidden="true">
+        <div class="about-image-placeholder">
+          <span data-i18n-html="about_placeholder">Foto da confeiteira<br>ou de um bolo destaque</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-eyebrow" data-i18n="about_eyebrow">Sobre</p>
+        <h2 data-i18n="about_title">A arte por trás de cada detalhe</h2>
+        <p data-i18n="about_text1">Cada bolo é pensado e decorado à mão, com atenção especial a cores, texturas e ao tema da sua celebração. O objetivo é simples: transformar um momento especial em uma lembrança ainda mais doce.</p>
+        <p data-i18n="about_text2">Do primeiro esboço ao último toque de glacê, cada encomenda é única — feita sob medida para você.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <p class="section-eyebrow center" data-i18n="gallery_eyebrow">Galeria</p>
+      <h2 class="center" data-i18n="gallery_title">Trabalhos recentes</h2>
+      <p class="section-sub center" data-i18n="gallery_sub">Uma amostra das criações mais recentes. Confira mais no Instagram.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"><span data-i18n="gallery_photo_1">Foto 1</span></div>
+        <div class="gallery-item"><span data-i18n="gallery_photo_2">Foto 2</span></div>
+        <div class="gallery-item"><span data-i18n="gallery_photo_3">Foto 3</span></div>
+        <div class="gallery-item"><span data-i18n="gallery_photo_4">Foto 4</span></div>
+        <div class="gallery-item"><span data-i18n="gallery_photo_5">Foto 5</span></div>
+        <div class="gallery-item"><span data-i18n="gallery_photo_6">Foto 6</span></div>
+      </div>
+
+      <div class="gallery-cta">
+        <a href="https://www.instagram.com/the_icing_art" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="gallery_cta">
+          Seguir no Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <p class="section-eyebrow center" data-i18n="testimonials_eyebrow">Depoimentos</p>
+      <h2 class="center" data-i18n="testimonials_title">O que as clientes dizem</h2>
+
+      <div class="testimonial-grid">
+        <blockquote class="testimonial">
+          <p data-i18n="testimonial1">"O bolo ficou ainda mais lindo do que eu imaginava, e o sabor surpreendeu todo mundo!"</p>
+          <cite data-i18n="testimonial_cite">— Cliente</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p data-i18n="testimonial2">"Atenção aos detalhes impressionante. Recomendo de olhos fechados."</p>
+          <cite data-i18n="testimonial_cite">— Cliente</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p data-i18n="testimonial3">"Entrega no prazo e um cuidado enorme com o tema da festa. Virei cliente fiel!"</p>
+          <cite data-i18n="testimonial_cite">— Cliente</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="container contact-grid">
+      <div class="contact-text">
+        <p class="section-eyebrow" data-i18n="contact_eyebrow">Contato</p>
+        <h2 data-i18n="contact_title">Vamos criar seu bolo dos sonhos?</h2>
+        <p data-i18n="contact_text">Chame no WhatsApp contando um pouco sobre sua ideia, data do evento e número de convidados.</p>
+        <ul class="contact-info">
+          <li>
+            <a href="https://wa.me/447840180469" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="icon-badge icon-badge--whatsapp">
+                <svg class="icon" viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9C13.5 27.8 14.7 28 16 28c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.2-3.5-.7l-.5-.2-4.6 1.2 1.2-4.5-.3-.5C7.4 18.9 6.9 17 6.9 15c0-5 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1-4.1 9-9.1 9zm5-6.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/>
+                </svg>
+              </span>
+              <span data-i18n="contact_whatsapp">Falar no WhatsApp</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/the_icing_art" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="icon-badge icon-badge--instagram">
+                <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <span>@the_icing_art</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="name" data-i18n="form_name">Nome</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="event-date" data-i18n="form_date">Data do evento</label>
+          <input type="date" id="event-date" name="event-date">
+        </div>
+        <div class="form-row">
+          <label for="message" data-i18n="form_message">Conte sobre o pedido</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Enviar no WhatsApp</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p><span data-i18n="footer_rights_prefix">&copy;</span> <span id="year"></span> The Icing Art. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+    <a href="https://www.instagram.com/the_icing_art" target="_blank" rel="noopener noreferrer" class="footer-link">
+      <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+</footer>
+
+<a href="https://wa.me/447840180469" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-i18n-attr="aria-label:whatsapp_aria">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9C13.5 27.8 14.7 28 16 28c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.2-3.5-.7l-.5-.2-4.6 1.2 1.2-4.5-.3-.5C7.4 18.9 6.9 17 6.9 15c0-5 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1-4.1 9-9.1 9zm5-6.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
