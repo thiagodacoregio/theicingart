@@ -12,7 +12,7 @@ const translations = {
     hero_sub: 'Criações artesanais personalizadas para tornar sua celebração ainda mais doce e especial.',
     hero_cta_primary: 'Fazer um pedido',
     hero_cta_outline: 'Ver galeria',
-    about_placeholder: 'Foto da confeiteira<br>ou de um bolo destaque',
+    about_image_alt: 'Bolo de três andares com tema safári, decorado com animais de açúcar',
     about_eyebrow: 'Sobre',
     about_title: 'A arte por trás de cada detalhe',
     about_text1: 'Cada bolo é pensado e decorado à mão, com atenção especial a cores, texturas e ao tema da sua celebração. O objetivo é simples: transformar um momento especial em uma lembrança ainda mais doce.',
@@ -20,12 +20,12 @@ const translations = {
     gallery_eyebrow: 'Galeria',
     gallery_title: 'Trabalhos recentes',
     gallery_sub: 'Uma amostra das criações mais recentes. Confira mais no Instagram.',
-    gallery_photo_1: 'Foto 1',
-    gallery_photo_2: 'Foto 2',
-    gallery_photo_3: 'Foto 3',
-    gallery_photo_4: 'Foto 4',
-    gallery_photo_5: 'Foto 5',
-    gallery_photo_6: 'Foto 6',
+    gallery_photo_1: 'Bolo naked cake com ursinho, pinheiros e cogumelos de açúcar',
+    gallery_photo_2: 'Mini bolos e biscoito decorado com tema de patinha e flores',
+    gallery_photo_3: 'Pirulitos de chocolate com azulejos portugueses e fatias de limão',
+    gallery_photo_4: 'Buquê de biscoitos decorados e tulipas de açúcar',
+    gallery_photo_5: 'Brigadeiros e beijinhos ao redor de uma casinha de açúcar',
+    gallery_photo_6: 'Bolo decorado com flores coloridas e sombreiro mexicano',
     gallery_cta: 'Seguir no Instagram',
     testimonials_eyebrow: 'Depoimentos',
     testimonials_title: 'O que as clientes dizem',
@@ -46,6 +46,9 @@ const translations = {
     footer_rights: 'Todos os direitos reservados.',
     whatsapp_aria: 'Falar no WhatsApp',
     nav_toggle_aria: 'Abrir menu',
+    lightbox_close: 'Fechar',
+    lightbox_prev: 'Foto anterior',
+    lightbox_next: 'Próxima foto',
     whatsapp_message: 'Olá! Meu nome é {name}. {message}',
   },
   en: {
@@ -60,7 +63,7 @@ const translations = {
     hero_sub: 'Personalised handmade creations to make your celebration even sweeter.',
     hero_cta_primary: 'Place an order',
     hero_cta_outline: 'View gallery',
-    about_placeholder: 'Photo of the baker<br>or a featured cake',
+    about_image_alt: 'Three-tier safari-themed cake decorated with sugar animals',
     about_eyebrow: 'About',
     about_title: 'The art behind every detail',
     about_text1: 'Every cake is thoughtfully designed and hand-decorated, with special attention to colours, textures and the theme of your celebration. The goal is simple: to turn a special moment into an even sweeter memory.',
@@ -68,12 +71,12 @@ const translations = {
     gallery_eyebrow: 'Gallery',
     gallery_title: 'Recent creations',
     gallery_sub: 'A glimpse of the latest creations. See more on Instagram.',
-    gallery_photo_1: 'Photo 1',
-    gallery_photo_2: 'Photo 2',
-    gallery_photo_3: 'Photo 3',
-    gallery_photo_4: 'Photo 4',
-    gallery_photo_5: 'Photo 5',
-    gallery_photo_6: 'Photo 6',
+    gallery_photo_1: 'Naked cake with a sugar bear, pine trees and mushrooms',
+    gallery_photo_2: 'Mini cakes and decorated cookie with a duck and flowers theme',
+    gallery_photo_3: 'Chocolate lollipops with Portuguese tiles and lemon slices',
+    gallery_photo_4: 'Bouquet of decorated cookies and sugar tulips',
+    gallery_photo_5: 'Brazilian truffles around a little sugar house',
+    gallery_photo_6: 'Cake decorated with colorful flowers and a Mexican sombrero',
     gallery_cta: 'Follow on Instagram',
     testimonials_eyebrow: 'Testimonials',
     testimonials_title: 'What clients say',
@@ -94,6 +97,9 @@ const translations = {
     footer_rights: 'All rights reserved.',
     whatsapp_aria: 'Message on WhatsApp',
     nav_toggle_aria: 'Open menu',
+    lightbox_close: 'Close',
+    lightbox_prev: 'Previous photo',
+    lightbox_next: 'Next photo',
     whatsapp_message: "Hi! My name is {name}. {message}",
   },
 };
@@ -168,6 +174,59 @@ navLinks.querySelectorAll('a').forEach((link) => {
     navLinks.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
   });
+});
+
+// ---- Gallery lightbox ----
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+let lightboxIndex = 0;
+
+function showLightboxImage(index) {
+  lightboxIndex = (index + galleryImages.length) % galleryImages.length;
+  const img = galleryImages[lightboxIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+}
+
+function openLightbox(index) {
+  showLightboxImage(index);
+  lightbox.showModal();
+  document.body.classList.add('no-scroll');
+}
+
+galleryImages.forEach((img, index) => {
+  img.closest('.gallery-item').addEventListener('click', () => openLightbox(index));
+});
+
+lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showLightboxImage(lightboxIndex - 1));
+lightbox.querySelector('.lightbox-next').addEventListener('click', () => showLightboxImage(lightboxIndex + 1));
+
+// Clicking the dark backdrop (not the photo or buttons) closes it
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox) lightbox.close();
+});
+
+lightbox.addEventListener('close', () => document.body.classList.remove('no-scroll'));
+
+lightbox.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') showLightboxImage(lightboxIndex - 1);
+  if (event.key === 'ArrowRight') showLightboxImage(lightboxIndex + 1);
+});
+
+// Swipe left/right on touch screens
+let touchStartX = null;
+
+lightbox.addEventListener('touchstart', (event) => {
+  touchStartX = event.touches[0].clientX;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', (event) => {
+  if (touchStartX === null) return;
+  const deltaX = event.changedTouches[0].clientX - touchStartX;
+  touchStartX = null;
+  if (Math.abs(deltaX) > 50) showLightboxImage(lightboxIndex + (deltaX < 0 ? 1 : -1));
 });
 
 // ---- Footer year ----

@@ -69,10 +69,8 @@
 
   <section class="about" id="sobre">
     <div class="container about-grid">
-      <div class="about-image" aria-hidden="true">
-        <div class="about-image-placeholder">
-          <span data-i18n-html="about_placeholder">Foto da confeiteira<br>ou de um bolo destaque</span>
-        </div>
+      <div class="about-image">
+        <img src="images/about-safari-cake.jpg" alt="Bolo de três andares com tema safári, decorado com animais de açúcar" data-i18n-attr="alt:about_image_alt" loading="lazy">
       </div>
       <div class="about-text">
         <p class="section-eyebrow" data-i18n="about_eyebrow">Sobre</p>
@@ -90,12 +88,12 @@
       <p class="section-sub center" data-i18n="gallery_sub">Uma amostra das criações mais recentes. Confira mais no Instagram.</p>
 
       <div class="gallery-grid">
-        <div class="gallery-item"><span data-i18n="gallery_photo_1">Foto 1</span></div>
-        <div class="gallery-item"><span data-i18n="gallery_photo_2">Foto 2</span></div>
-        <div class="gallery-item"><span data-i18n="gallery_photo_3">Foto 3</span></div>
-        <div class="gallery-item"><span data-i18n="gallery_photo_4">Foto 4</span></div>
-        <div class="gallery-item"><span data-i18n="gallery_photo_5">Foto 5</span></div>
-        <div class="gallery-item"><span data-i18n="gallery_photo_6">Foto 6</span></div>
+        <button type="button" class="gallery-item"><img src="images/gallery-bolo-urso-floresta.jpg" alt="Bolo naked cake com ursinho, pinheiros e cogumelos de açúcar" data-i18n-attr="alt:gallery_photo_1" loading="lazy"></button>
+        <button type="button" class="gallery-item"><img src="images/gallery-mini-bolos-patinha.jpg" alt="Mini bolos e biscoito decorado com tema de patinha e flores" data-i18n-attr="alt:gallery_photo_2" loading="lazy"></button>
+        <button type="button" class="gallery-item"><img src="images/gallery-pirulitos-limao-azulejo.jpg" alt="Pirulitos de chocolate com azulejos portugueses e fatias de limão" data-i18n-attr="alt:gallery_photo_3" loading="lazy"></button>
+        <button type="button" class="gallery-item"><img src="images/gallery-biscoitos-tulipas.jpg" alt="Buquê de biscoitos decorados e tulipas de açúcar" data-i18n-attr="alt:gallery_photo_4" loading="lazy"></button>
+        <button type="button" class="gallery-item"><img src="images/gallery-docinhos-casinha.jpg" alt="Brigadeiros e beijinhos ao redor de uma casinha de açúcar" data-i18n-attr="alt:gallery_photo_5" loading="lazy"></button>
+        <button type="button" class="gallery-item"><img src="images/gallery-bolo-flores-mexicano.jpg" alt="Bolo decorado com flores coloridas e sombreiro mexicano" data-i18n-attr="alt:gallery_photo_6" loading="lazy"></button>
       </div>
 
       <div class="gallery-cta">
@@ -200,6 +198,13 @@
     <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9C13.5 27.8 14.7 28 16 28c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.2-3.5-.7l-.5-.2-4.6 1.2 1.2-4.5-.3-.5C7.4 18.9 6.9 17 6.9 15c0-5 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1-4.1 9-9.1 9zm5-6.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/>
   </svg>
 </a>
+
+  <dialog class="lightbox" id="lightbox">
+    <button type="button" class="lightbox-close" data-i18n-attr="aria-label:lightbox_close" aria-label="Fechar">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" data-i18n-attr="aria-label:lightbox_prev" aria-label="Foto anterior">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button type="button" class="lightbox-nav lightbox-next" data-i18n-attr="aria-label:lightbox_next" aria-label="Próxima foto">&#8250;</button>
+  </dialog>
 
 <script src="script.js"></script>
 </body>
